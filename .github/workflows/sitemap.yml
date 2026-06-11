@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate sitemap
-        uses: cicirello/generate-sitemap@v1
+        uses: jerrykan/sitemap-generator@v1.0.1
         with:
           base-url: https://guptalab-erlangen.github.io/
           path-to-root: ./
