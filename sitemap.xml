@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://web.address.of.your.nifty.website/</loc>
-<lastmod>2026-06-11T12:42:39+02:00</lastmod>
-</url>
-<url>
-<loc>https://web.address.of.your.nifty.website/contact.html</loc>
-<lastmod>2026-06-11T12:42:39+02:00</lastmod>
-</url>
-<url>
-<loc>https://web.address.of.your.nifty.website/funding.html</loc>
-<lastmod>2026-06-11T12:42:39+02:00</lastmod>
-</url>
-<url>
-<loc>https://web.address.of.your.nifty.website/googlef1d346a9b53a6fa7.html</loc>
-<lastmod>2026-06-11T12:42:39+02:00</lastmod>
-</url>
-<url>
-<loc>https://web.address.of.your.nifty.website/publications.html</loc>
-<lastmod>2026-06-11T12:42:39+02:00</lastmod>
-</url>
-<url>
-<loc>https://web.address.of.your.nifty.website/research.html</loc>
-<lastmod>2026-06-11T12:42:39+02:00</lastmod>
-</url>
-<url>
-<loc>https://web.address.of.your.nifty.website/teaching.html</loc>
-<lastmod>2026-06-11T12:42:39+02:00</lastmod>
-</url>
-<url>
-<loc>https://web.address.of.your.nifty.website/team.html</loc>
-<lastmod>2026-06-11T12:42:39+02:00</lastmod>
-</url>
-<url>
-<loc>https://web.address.of.your.nifty.website/tools.html</loc>
-<lastmod>2026-06-11T12:42:39+02:00</lastmod>
-</url>
+
+  <url>
+    <loc>https://guptalab-erlangen.github.io/</loc>
+  </url>
+
+  <url>
+    <loc>https://guptalab-erlangen.github.io/team.html</loc>
+  </url>
+
+  <url>
+    <loc>https://guptalab-erlangen.github.io/research.html</loc>
+  </url>
+
+  <url>
+    <loc>https://guptalab-erlangen.github.io/publications.html</loc>
+  </url>
+
+  <url>
+    <loc>https://guptalab-erlangen.github.io/tools.html</loc>
+  </url>
+
+  <url>
+    <loc>https://guptalab-erlangen.github.io/funding.html</loc>
+  </url>
+
+  <url>
+    <loc>https://guptalab-erlangen.github.io/teaching.html</loc>
+  </url>
+
+  <url>
+    <loc>https://guptalab-erlangen.github.io/contact.html</loc>
+  </url>
+
 </urlset>
