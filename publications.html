@@ -5,12 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Gupta Lab</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero-banner {
+            background: linear-gradient(135deg, #0a192f 0%, #0f3460 100%);
+            padding: 45px 40px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 40px;
+        }
+
+        .hero-logo {
+            flex: 0 0 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo img {
+            display: block;
+            width: 280px;
+            height: 280px;
+            max-width: 100%;
+            object-fit: contain;
+            background: transparent;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 0;
+            text-align: left;
+            padding-left: 0;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.3rem, 3.2vw, 3.2rem);
+            line-height: 1.15;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            letter-spacing: -0.7px;
+            text-shadow: 0 3px 12px rgba(0,0,0,0.6);
+        }
+
+        .hero-text .lab-name {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin: 0 0 20px 0;
+            color: #00b4d8;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero-text .hero-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            font-weight: 600;
+            color: #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            word-spacing: 2px;
+            opacity: 0.95;
+            background: rgba(255,255,255,0.08);
+            padding: 10px 16px;
+            border-radius: 12px;
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        @media (min-width: 761px) and (max-width: 1000px) {
+            .hero-banner {
+                padding: 40px 25px;
+            }
+
+            .hero-inner {
+                gap: 25px;
+            }
+
+            .hero-logo {
+                flex-basis: 220px;
+            }
+
+            .hero-logo img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero-text .lab-name {
+                font-size: 1.8rem;
+            }
+
+            .hero-text .hero-description {
+                font-size: 0.78rem;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .hero-banner {
+                padding: 30px 20px;
+            }
+
+            .hero-inner {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .hero-logo {
+                flex: 0 0 auto;
+            }
+
+            .hero-logo img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+
+            .hero-text .lab-name {
+                font-size: 1.7rem;
+                margin-bottom: 16px;
+            }
+
+            .hero-text .hero-description {
+                font-size: 0.75rem;
+                letter-spacing: 0.8px;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-logo img {
+                width: 155px;
+                height: 155px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero-text .lab-name {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- Premium Abstract Hero Banner (Subpage Variant) -->
-     <div class="hero-banner" style="background: linear-gradient(135deg, #0a192f 0%, #0f3460 100%); padding: 70px 20px; text-align: center; color: #ffffff; position: relative; overflow: hidden; min-height: 280px; display: flex; align-items: center; justify-content: center;">
-        
+    <div class="hero-banner">  
+
         <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.22; pointer-events: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
             <defs>
                 <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
@@ -35,10 +206,19 @@
             <circle cx="740" cy="180" r="25" fill="url(#nodeGlow)" opacity="0.4"/>
         </svg>
 
-        <!-- Subpage Typography -->
-        <div style="position: relative; z-index: 2; max-width: 850px;">
-            <h1 style="font-size: 3.0rem; margin: 0 0 5px 0; font-weight: 700; letter-spacing: -0.5px; text-shadow: 0 3px 12px rgba(0,0,0,0.6);">Publications</h1>
-            <p style="font-size: 1.2rem; margin: 0; color: #00b4d8; font-weight: 500; letter-spacing: 0.3px; text-shadow: 0 2px 6px rgba(0,0,0,0.5);">Academic Output & Peer-Reviewed Research</p>
+        <div class="hero-inner">
+
+            <div class="hero-logo">
+                <img src="images/gupta-lab-logo.png" alt="Gupta Lab Logo">
+            </div>
+
+            <div class="hero-text">
+                <h1> Publications </h1>
+
+                <p class="lab-name">Academic Output & Peer-Reviewed Research</p>
+
+            </div>
+
         </div>
     </div>
 
