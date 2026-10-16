@@ -1,12 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Gupta Lab</title>
+    <meta name="description" content="Contact the Gupta Lab at the Department of Stem Cell Biology, Universitätsklinikum Erlangen, FAU Erlangen-Nürnberg.">
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* =========================================
+           ORIGINAL BANNER CSS — UNCHANGED
+        ========================================= */
+
         .hero-banner {
             background: linear-gradient(135deg, #0a192f 0%, #0f3460 100%);
             padding: 45px 40px;
@@ -176,11 +182,439 @@
                 font-size: 1.5rem;
             }
         }
+
+        /* =========================================
+           CONTACT PAGE STYLES
+           All styles below are for contact content.
+           The banner, navigation, and global body
+           styling are not overridden.
+        ========================================= */
+
+        .contact-content {
+            padding: 0 22px 45px;
+        }
+
+        .contact-content *,
+        .contact-content *::before,
+        .contact-content *::after {
+            box-sizing: border-box;
+        }
+
+        .contact-content a {
+            color: #1266a8;
+            text-decoration: none;
+            text-underline-offset: 3px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-content a:hover {
+            color: #084d83;
+            text-decoration: underline;
+        }
+
+        .contact-content a:focus-visible {
+            outline: 3px solid #3b82c4;
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        .contact-intro {
+            max-width: 900px;
+            margin: 44px auto 42px;
+            padding: 38px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #eef7ff, #e1f0fb);
+            border: 1px solid #d5e6f4;
+            border-radius: 16px;
+        }
+
+        .contact-eyebrow {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: #1769aa;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-intro h2 {
+            margin: 0 0 15px;
+            color: #123b60;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            line-height: 1.3;
+        }
+
+        .contact-intro p {
+            max-width: 740px;
+            margin: 0 auto;
+            color: #40566b;
+            font-size: 1.04rem;
+            line-height: 1.8;
+        }
+
+        .contact-section {
+            max-width: 1120px;
+            margin: 0 auto 48px;
+        }
+
+        .section-heading {
+            margin: 0 0 10px;
+            color: #123b60;
+            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            line-height: 1.35;
+        }
+
+        .section-description {
+            margin: 0 0 24px;
+            color: #526579;
+            line-height: 1.75;
+        }
+
+        /* Address and general contact panel */
+
+        .lab-contact-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 30px;
+            padding: 32px;
+            background: linear-gradient(135deg, #f0f8ff, #e5f2fc);
+            border: 1px solid #c8e2f5;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(28, 76, 115, 0.06);
+        }
+
+        .contact-block h3 {
+            margin: 0 0 16px;
+            color: #164b75;
+            font-size: 1.25rem;
+        }
+
+        .address-text {
+            margin: 0;
+            color: #34495e;
+            font-style: normal;
+            line-height: 1.9;
+        }
+
+        .address-text strong {
+            color: #183f60;
+        }
+
+        .contact-detail-list {
+            display: grid;
+            gap: 13px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .contact-detail-list li {
+            color: #34495e;
+            line-height: 1.7;
+        }
+
+        .contact-detail-list strong {
+            color: #183f60;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 11px 18px;
+            border: 1px solid #1769aa;
+            border-radius: 8px;
+            background: #1769aa;
+            color: #ffffff !important;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none !important;
+            transition: background-color 0.2s ease,
+                        border-color 0.2s ease,
+                        transform 0.2s ease;
+        }
+
+        .contact-button:hover {
+            background: #104f83;
+            border-color: #104f83;
+            color: #ffffff !important;
+            transform: translateY(-1px);
+        }
+
+        .contact-button.secondary {
+            color: #1769aa !important;
+            background: transparent;
+        }
+
+        .contact-button.secondary:hover {
+            background: #d9ecfb;
+        }
+
+        /* Group leader */
+
+        .group-leader-card {
+            position: relative;
+            max-width: 1120px;
+            margin: 0 auto 48px;
+            padding: 30px 32px 30px 36px;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #d7e4ef;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(20, 57, 89, 0.05);
+        }
+
+        .group-leader-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 6px;
+            background: #1598c7;
+        }
+
+        .group-leader-card h3 {
+            margin: 0 0 5px;
+            color: #123b60;
+            font-size: 1.45rem;
+        }
+
+        .person-role {
+            margin: 0 0 17px;
+            color: #1769aa;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        .group-leader-card p:not(.person-role) {
+            margin: 9px 0;
+            color: #45596d;
+            line-height: 1.7;
+        }
+
+        /* Team directory */
+
+        .team-category {
+            margin-top: 35px;
+        }
+
+        .team-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 0 19px;
+            color: #164b75;
+            font-size: 1.35rem;
+        }
+
+        .team-category h3::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: #d8e5ef;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .team-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 23px;
+            background: #ffffff;
+            border: 1px solid #d9e5ef;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(25, 65, 99, 0.045);
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease,
+                        border-color 0.2s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+            border-color: #b4d5eb;
+            box-shadow: 0 8px 22px rgba(25, 65, 99, 0.09);
+        }
+
+        .team-card h4 {
+            margin: 0 0 6px;
+            color: #163e60;
+            font-size: 1.12rem;
+            line-height: 1.45;
+        }
+
+        .team-card .person-role {
+            margin: 0 0 16px;
+            font-size: 0.94rem;
+        }
+
+        .team-card-details {
+            display: grid;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 4px;
+            color: #4b5d6f;
+            font-size: 0.93rem;
+            line-height: 1.65;
+        }
+
+        .team-card-details p {
+            margin: 0;
+        }
+
+        .team-card-details strong {
+            color: #263f55;
+        }
+
+        /* Academic enquiries */
+
+        .academic-panel {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .academic-card {
+            padding: 26px;
+            background: linear-gradient(135deg, #f0f8ff, #e5f2fc);
+            border: 1px solid #c8e2f5;
+            border-radius: 13px;
+        }
+
+        .academic-card h3 {
+            margin: 0 0 12px;
+            color: #164b75;
+            font-size: 1.2rem;
+        }
+
+        .academic-card p {
+            margin: 0;
+            color: #40566b;
+            line-height: 1.8;
+        }
+
+        .support-panel {
+            margin-top: 26px;
+            padding: 32px;
+            text-align: center;
+            background: linear-gradient(135deg, #eef7ff, #e5f2fc);
+            border: 1px solid #c8e2f5;
+            border-radius: 15px;
+        }
+
+        .support-panel h2 {
+            margin: 0 0 12px;
+            color: #123b60;
+            font-size: 1.7rem;
+        }
+
+        .support-panel p {
+            max-width: 760px;
+            margin: 0 auto 22px;
+            color: #40566b;
+            line-height: 1.8;
+        }
+
+        /* Responsive contact content */
+
+        @media (min-width: 761px) and (max-width: 1000px) {
+            .team-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            .contact-content {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+
+            .contact-intro {
+                margin: 28px auto 32px;
+                padding: 30px 22px;
+            }
+
+            .lab-contact-panel {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 28px;
+                padding: 24px;
+            }
+
+            .group-leader-card {
+                padding: 25px 22px 25px 28px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .team-card {
+                padding: 19px;
+            }
+
+            .academic-panel {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .support-panel {
+                padding: 28px 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .team-card {
+                padding: 21px;
+            }
+
+            .contact-actions {
+                flex-direction: column;
+            }
+
+            .contact-button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .team-card,
+            .contact-button {
+                transition: none;
+            }
+
+            .team-card:hover,
+            .contact-button:hover {
+                transform: none;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <div class="hero-banner">  
+    <!-- =========================================
+         ORIGINAL BANNER — UNCHANGED
+    ========================================= -->
+
+    <div class="hero-banner">
 
         <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.22; pointer-events: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
             <defs>
@@ -222,7 +656,8 @@
         </div>
     </div>
 
-    <!-- Synchronized Navigation -->
+    <!-- Original synchronized navigation — unchanged -->
+
     <nav>
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
@@ -234,37 +669,410 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="container">
-        <div class="grid">
-            
-            <!-- Postal & Office Address -->
-            <div class="card">
-                <h2>Mailing Address</h2>
+    <!-- =========================================
+         CONTACT PAGE CONTENT
+    ========================================= -->
+
+    <main class="contact-content">
+
+        <section class="contact-intro">
+            <span class="contact-eyebrow">Get in touch</span>
+
+            <h2>Contact Gupta Lab</h2>
+
+            <p>
+                We welcome enquiries about our research, potential
+                collaborations, and opportunities to work with our team.
+                Find our contact information and team directory below.
+            </p>
+        </section>
+
+        <!-- Mailing address and general enquiries -->
+
+        <section class="contact-section" aria-labelledby="location-heading">
+            <h2 class="section-heading" id="location-heading">
+                Location &amp; General Enquiries
+            </h2>
+
+            <p class="section-description">
+                Visit us at the University Hospital Erlangen or contact
+                our group about research, collaborations, or project opportunities.
+            </p>
+
+            <div class="lab-contact-panel">
+
+                <div class="contact-block">
+                    <h3>Mailing Address</h3>
+
+                    <address class="address-text">
+                        <strong>Multi-Omics in Systems Medicine Lab</strong><br>
+                        <a
+                            href="https://www.stammzellbiologie.uk-erlangen.de/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Department of Stem Cell Biology</a><br>
+                        Universitätsklinikum Erlangen (UKER)<br>
+                        Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)<br>
+                        Kussmaulallee 4<br>
+                        91054 Erlangen<br>
+                        Germany
+                    </address>
+
+                    <div class="contact-actions">
+                        <a
+                            class="contact-button secondary"
+                            href="https://www.stammzellbiologie.uk-erlangen.de/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Department Website
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <h3>General Enquiries</h3>
+
+                    <ul class="contact-detail-list">
+                        <li>
+                            <strong>Contact person:</strong><br>
+                            Dr. rer. nat. Pooja Gupta
+                        </li>
+
+                        <li>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:Pooja.Gupta@uk-erlangen.de">
+                                Pooja.Gupta [at] uk-erlangen.de
+                            </a>
+                        </li>
+
+                        <li>
+                            <strong>Phone:</strong><br>
+                            <a href="tel:+4991318542840">
+                                +49 9131 85-42840
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="contact-actions">
+                        <a
+                            class="contact-button"
+                            href="mailto:Pooja.Gupta@uk-erlangen.de"
+                        >
+                            Email the Lab
+                        </a>
+
+                        <a
+                            class="contact-button secondary"
+                            href="tel:+4991318542840"
+                        >
+                            Call the Lab
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Group leader -->
+
+        <section
+            class="group-leader-card"
+            aria-labelledby="group-leader-heading"
+        >
+            <h2 class="section-heading" id="group-leader-heading">
+                Group Leader
+            </h2>
+
+            <h3>Dr. rer. nat. Pooja Gupta</h3>
+
+            <p class="person-role">Research Group Leader</p>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:Pooja.Gupta@uk-erlangen.de">
+                    Pooja.Gupta [at] uk-erlangen.de
+                </a>
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                <a href="tel:+4991318542840">+49 9131 85-42840</a>
+            </p>
+
+            <p>
+                <strong>Department:</strong>
+                <a
+                    href="https://www.stammzellbiologie.uk-erlangen.de/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Department of Stem Cell Biology
+                </a>
+            </p>
+        </section>
+
+        <!-- Team directory -->
+
+        <section class="contact-section" aria-labelledby="team-heading">
+            <h2 class="section-heading" id="team-heading">Our Team</h2>
+
+            <p class="section-description">
+                Contact our team members directly for questions related
+                to their research, expertise, or ongoing projects.
+            </p>
+
+            <!-- Scientific Researchers -->
+
+            <div class="team-category">
+                <h3>Scientific Researchers</h3>
+
+                <div class="team-grid">
+
+                    <article class="team-card">
+                        <h4>Dr. Florin Ratajczak</h4>
+                        <p class="person-role">Postdoctoral Researcher</p>
+
+                        <div class="team-card-details">
+                            <p>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:Florin.Ratajczak@uk-erlangen.de">
+                                    Florin.Ratajczak [at] uk-erlangen.de
+                                </a>
+                            </p>
+
+                            <p>
+                                <strong>Phone:</strong><br>
+                                <a href="tel:+4991318542835">
+                                    +49 9131 85-42835
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <h4>Dr. Luis Carlos Rivera Monroy</h4>
+                        <p class="person-role">Postdoctoral Researcher</p>
+
+                        <div class="team-card-details">
+                            <p>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:luis.rivera@fau.de">
+                                    luis.rivera [at] fau.de
+                                </a>
+                            </p>
+
+                            <p>
+                                <strong>Website:</strong><br>
+                                <a
+                                    href="https://luiscarm9.github.io/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Personal Website
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Scientific Staff -->
+
+            <div class="team-category">
+                <h3>Scientific Staff</h3>
+
+                <div class="team-grid">
+
+                    <article class="team-card">
+                        <h4>Alejandra Pizzano</h4>
+                        <p class="person-role">Scientific Staff</p>
+
+                        <div class="team-card-details">
+                            <p>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:alejandra.adali.pizano@fau.de">
+                                    alejandra.adali.pizano [at] fau.de
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <h4>Dr. Cornelia Redel Smirnov</h4>
+                        <p class="person-role">Scientific Staff</p>
+
+                        <div class="team-card-details">
+                            <p>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:cornelia.redel-smirnov@uk-erlangen.de">
+                                    cornelia.redel-smirnov [at] uk-erlangen.de
+                                </a>
+                            </p>
+
+                            <p>
+                                <strong>Phone:</strong><br>
+                                <a href="tel:+4991318542907">
+                                    +49 9131 85-42907
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <h4>Dr. Veronika Sigutova</h4>
+                        <p class="person-role">Scientific Staff</p>
+
+                        <div class="team-card-details">
+                            <p>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:veronika.sigutova@uk-erlangen.de">
+                                    veronika.sigutova [at] uk-erlangen.de
+                                </a>
+                            </p>
+
+                            <p>
+                                <strong>Phone:</strong><br>
+                                <a href="tel:+4991318542907">
+                                    +49 9131 85-42907
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- PhD Students -->
+
+            <div class="team-category">
+                <h3>PhD Students</h3>
+
+                <div class="team-grid">
+
+                    <article class="team-card">
+                        <h4>Yanlin Wang</h4>
+                        <p class="person-role">PhD Student</p>
+
+                        <div class="team-card-details">
+                            <p>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:Yanlin.Wang@uk-erlangen.de">
+                                    Yanlin.Wang [at] uk-erlangen.de
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <h4>Sumit Kumar</h4>
+                        <p class="person-role">PhD Student</p>
+
+                        <div class="team-card-details">
+                            <p>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:Sumit.Kumar@uk-erlangen.de">
+                                    Sumit.Kumar [at] uk-erlangen.de
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <h4>Sudhanva Krishna Shastry</h4>
+                        <p class="person-role">PhD Student</p>
+
+                        <div class="team-card-details">
+                            <p>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:Sudhanva.Shastry@uk-erlangen.de">
+                                    Sudhanva.Shastry [at] uk-erlangen.de
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Academic enquiries and openings -->
+
+        <section class="contact-section" aria-labelledby="academic-heading">
+            <h2 class="section-heading" id="academic-heading">
+                Inquiries &amp; Openings
+            </h2>
+
+            <p class="section-description">
+                We are interested in connecting with motivated students
+                and researchers, and in developing collaborative projects.
+            </p>
+
+            <div class="academic-panel">
+
+                <article class="academic-card">
+                    <h3>Prospective Students</h3>
+
+                    <p>
+                        We welcome enquiries from motivated students
+                        interested in computational biology, multi-omics,
+                        and AI-driven systems medicine. For project
+                        opportunities, please contact Dr. Pooja Gupta.
+                    </p>
+
+                    <div class="contact-actions">
+                        <a
+                            class="contact-button"
+                            href="mailto:Pooja.Gupta@uk-erlangen.de?subject=Student%20Project%20Inquiry"
+                        >
+                            Enquire About Projects
+                        </a>
+                    </div>
+                </article>
+
+                <article class="academic-card">
+                    <h3>Collaborations</h3>
+
+                    <p>
+                        For bioinformatics analysis, multi-omics data
+                        integration, data visualization, or other
+                        collaborative work, please contact Dr. Pooja Gupta.
+                    </p>
+
+                    <div class="contact-actions">
+                        <a
+                            class="contact-button"
+                            href="mailto:Pooja.Gupta@uk-erlangen.de?subject=Research%20Collaboration"
+                        >
+                            Discuss a Collaboration
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="support-panel">
+                <h2>Research, Bioinformatics &amp; Teaching</h2>
+
                 <p>
-                    <strong>Multi-Omics in Systems Medicine Lab</strong><br>
-                    <a href="https://www.stammzellbiologie.uk-erlangen.de/" target="_blank">Department of Stem Cell Biology</a><br> 
-                    Universitätsklinikum Erlangen (UKER)<br>
-                    Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)<br>
-                    Kussmaulallee 4<br>
-                    91054 Erlangen<br>
-                    Germany
+                    We welcome discussions about RNA-sequencing analysis,
+                    reproducible workflows, data visualization, and FAIR
+                    data practices. For information about our teaching
+                    and training activities, please visit the teaching page.
                 </p>
+
+                <a class="contact-button" href="teaching.html">
+                    Explore Teaching &amp; Training
+                </a>
             </div>
+        </section>
 
-            <!-- Academic Enquiries -->
-            <div class="card">
-                <h2>Inquiries & Openings</h2>
-                <h3>Prospective Students</h3>
-                <p>We are always looking for motivated students interested in computational biology, multi-omics, and AI-driven systems medicine. For project inquiries, please contact Dr. Pooja Gupta directly.</p>
-                
-                <h3>Collaborations</h3>
-                <p>For bioinformatics analysis, multi-omics data integration, or other collaborative work, please contact Dr. Pooja Gupta directly.</p>
-            </div>
+    </main>
 
-        </div>
-    </div>
+    <!-- Synchronized Footer — unchanged -->
 
-    <!-- Synchronized Footer -->
     <footer style="text-align:center; padding:30px; color:#666; font-size:0.9rem; margin-top: 40px; border-top: 1px solid #e2e8f0;">
         &copy; 2026 Gupta Lab | Department of Stem Cell Biology | Universitätsklinikum Erlangen | FAU Erlangen&ndash;Nürnberg
     </footer>
